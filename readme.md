@@ -23,6 +23,16 @@
 
 ## Usage
 
+### via launch script
+
+```
+curl -sL https://raw.githubusercontent.com/cbuschka/bigtoolbox/main/run-bigtoolbox.sh -o /tmp/run-bigtoolbox.sh && \
+	chmod u+x /tmp/run-bigtoolbox.sh && \
+	/tmp/run-bigtoolbox.sh
+```
+
+### via docker
+
 ```
 docker run --rm -ti \
 	-e RUN_AS_UID=$(id -u) \
