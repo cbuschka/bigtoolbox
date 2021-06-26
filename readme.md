@@ -42,7 +42,7 @@ docker run --rm -ti \
 	-v ${HOME}/.docker:/me/.docker:ro \
 	-v ${HOME}/.m2:/me/.m2:rw \
 	-v ${PWD}:/work \
-	-v $(shell readlink -f ${SSH_AUTH_SOCK}):/ssh-agent \
+	-v $(readlink -f ${SSH_AUTH_SOCK}):/ssh-agent \
 	-e SSH_AUTH_SOCK=/ssh-agent \
 	cbuschka/bigtoolbox:latest bash
 ```
