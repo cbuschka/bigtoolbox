@@ -2,6 +2,9 @@
 
 ## Tools
 
+* curl
+* jq
+* dnsutils
 * build-essential
 * make
 * python

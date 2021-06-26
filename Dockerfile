@@ -12,7 +12,7 @@ RUN export DEBIAN_FRONTEND=noninteractive; \
 
 RUN export DEBIAN_FRONTEND=noninteractive; \
 	apt-get update && \
-	apt-get install --no-install-recommends -y locales curl python libpng-dev build-essential git procps apt-transport-https ca-certificates software-properties-common apt-utils openssh-client vim make gnupg2 && \
+	apt-get install --no-install-recommends -y locales curl python libpng-dev build-essential git procps apt-transport-https ca-certificates software-properties-common apt-utils openssh-client vim make gnupg2 dnsutils jq && \
 	ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
 	sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen && \
 	locale-gen en_US.UTF-8 && \
