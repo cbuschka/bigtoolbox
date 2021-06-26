@@ -1,8 +1,23 @@
-# debian docker container with useful tools
+# Debian (stretch) Docker Container with useful Tools
 
+## Tools
+
+* build-essential
+* make
+* python
+* git
 * openssh-client
+* vim
+* go 1.16
+* maven 3.6
+* docker client
+* node v10.15
+* openjdk 11
+* libpng-dev
+* yarn
+* gnupg2
 
-## User switching
+## Usage
 
 ```
 docker run --rm -ti \
