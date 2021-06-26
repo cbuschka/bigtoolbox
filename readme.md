@@ -28,9 +28,9 @@ docker run --rm -ti \
 	-e RUN_AS_UID=$(id -u) \
 	-e RUN_AS_GID=$(id -g) \
 	-v /var/run/docker.sock:/var/run/docker.sock \
-	-v ${HOME}/.ssh:/ego/.ssh:ro \
-	-v ${HOME}/.docker:/ego/.docker:ro \
-	-v ${HOME}/.m2:/ego/.m2:rw \
+	-v ${HOME}/.ssh:/me/.ssh:ro \
+	-v ${HOME}/.docker:/me/.docker:ro \
+	-v ${HOME}/.m2:/me/.m2:rw \
 	-v ${PWD}:/work \
 	-v $(shell readlink -f ${SSH_AUTH_SOCK}):/ssh-agent \
 	-e SSH_AUTH_SOCK=/ssh-agent \

@@ -72,7 +72,7 @@ RUN mkdir -p /usr/local/bin && \
 	chmod 755 /usr/local/bin/gosu-${GOSU_VERSION} && \
 	ln -s /usr/local/bin/gosu-${GOSU_VERSION} /usr/local/bin/gosu
 
-RUN mkdir -p /ego
+RUN mkdir -p /me
 WORKDIR /work
 
 COPY /assets/entrypoint.sh /entrypoint.sh

@@ -12,7 +12,7 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-RUN_AS_USERNAME=ego
+RUN_AS_USERNAME=me
 RUN_AS_HOME=/${RUN_AS_USERNAME}
 if [ ! -z "${RUN_AS_UID}" ]; then
   if [ "${UID}" != "0" ]; then
