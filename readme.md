@@ -34,7 +34,7 @@ docker run --rm -ti \
 	-v ${PWD}:/work \
 	-v $(shell readlink -f ${SSH_AUTH_SOCK}):/ssh-agent \
 	-e SSH_AUTH_SOCK=/ssh-agent \
-	cbuschka/toolbox:latest bash
+	cbuschka/bigtoolbox:latest bash
 ```
 
 ## License
