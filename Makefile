@@ -3,12 +3,12 @@ VERSION ::= $(shell git describe --always --tags --dirty)
 
 build:
 	@cd $(PROJECT_DIR)
-	docker build -t toolbox:local .
+	docker build -t bigtoolbox:local .
 
 run:	build
 	@cd $(PROJECT_DIR)
 	docker run --rm -ti \
-		-h toolbox \
+		-h bigtoolbox \
 		-e RUN_AS_UID=$(shell id -u) \
 		-e RUN_AS_GID=$(shell id -g) \
 		-v /var/run/docker.sock:/var/run/docker.sock \
@@ -16,10 +16,10 @@ run:	build
 		-v ${PWD}:/work \
 		-v $(shell readlink -f ${SSH_AUTH_SOCK}):/ssh-agent \
 		-e SSH_AUTH_SOCK=/ssh-agent \
-		toolbox:local bash
+		bigtoolbox:local bash
 
 release:	build
-	docker tag toolbox:local docker.io/cbuschka/toolbox:$(VERSION)
-	docker tag toolbox:local docker.io/cbuschka/toolbox:latest
-	docker push docker.io/cbuschka/toolbox:$(VERSION)
-	docker push docker.io/cbuschka/toolbox:latest
+	docker tag bigtoolbox:local docker.io/cbuschka/bigtoolbox:$(VERSION)
+	docker tag bigtoolbox:local docker.io/cbuschka/bigtoolbox:latest
+	docker push docker.io/cbuschka/bigtoolbox:$(VERSION)
+	docker push docker.io/cbuschka/bigtoolbox:latest
