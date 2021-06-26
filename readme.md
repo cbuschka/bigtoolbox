@@ -11,6 +11,8 @@ docker run --rm -ti \
 	-v /var/run/docker.sock:/var/run/docker.sock \
 	-v ${HOME}/.ssh:/build/.ssh:ro \
 	-v ${PWD}:/work \
+	-v $(shell readlink -f ${SSH_AUTH_SOCK}):/ssh-agent \
+	-e SSH_AUTH_SOCK=/ssh-agent \
 	cbuschka/toolbox:latest bash
 ```
 

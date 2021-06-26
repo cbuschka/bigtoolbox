@@ -14,6 +14,8 @@ run:	build
 		-v /var/run/docker.sock:/var/run/docker.sock \
 		-v ${HOME}/.ssh:/ego/.ssh:ro \
 		-v ${PWD}:/work \
+		-v $(shell readlink -f ${SSH_AUTH_SOCK}):/ssh-agent \
+		-e SSH_AUTH_SOCK=/ssh-agent \
 		toolbox:local bash
 
 release:	build
