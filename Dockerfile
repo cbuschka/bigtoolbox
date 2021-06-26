@@ -10,7 +10,7 @@ RUN export DEBIAN_FRONTEND=noninteractive; \
 
 RUN export DEBIAN_FRONTEND=noninteractive; \
 	apt-get update && \
-	apt-get install --no-install-recommends -y locales curl python build-essential git procps apt-transport-https ca-certificates software-properties-common apt-utils openssh-client && \
+	apt-get install --no-install-recommends -y locales curl python build-essential git procps apt-transport-https ca-certificates software-properties-common apt-utils openssh-client vim && \
 	sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen && \
 	locale-gen en_US.UTF-8 && \
 	echo "LANG=\"en_US.UTF-8\"" > /etc/default/locale && \
