@@ -13,6 +13,8 @@ run:	build
 		-e RUN_AS_GID=$(shell id -g) \
 		-v /var/run/docker.sock:/var/run/docker.sock \
 		-v ${HOME}/.ssh:/ego/.ssh:ro \
+		-v ${HOME}/.docker:/ego/.docker:ro \
+		-v ${HOME}/.m2:/ego/.m2:ro \
 		-v ${PWD}:/work \
 		-v $(shell readlink -f ${SSH_AUTH_SOCK}):/ssh-agent \
 		-e SSH_AUTH_SOCK=/ssh-agent \
