@@ -3,7 +3,7 @@ VERSION ::= $(shell git describe --always --tags --dirty)
 
 build:
 	@cd $(PROJECT_DIR)
-	docker build --no-cache -t toolbox:local .
+	docker build -t toolbox:local .
 
 run:	build
 	@cd $(PROJECT_DIR)
